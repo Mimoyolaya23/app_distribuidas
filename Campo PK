@@ -1,0 +1,242 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 04-06-2024 a las 15:43:19
+-- Versión del servidor: 8.2.0
+-- Versión de PHP: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `jardineria`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalle_pedido`
+--
+
+CREATE TABLE `detalle_pedido` (
+  `codigo_pedido` int NOT NULL,
+  `codigo_producto` varchar(15) NOT NULL,
+  `cantidad` int NOT NULL,
+  `precio_unidad` decimal(15,2) NOT NULL,
+  `numero_linea` smallint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `detalle_pedido`
+--
+
+INSERT INTO `detalle_pedido` (`codigo_pedido`, `codigo_producto`, `cantidad`, `precio_unidad`, `numero_linea`) VALUES
+(1, 'P001', 5, 10.00, 1),
+(1, 'P002', 3, 8.00, 2),
+(2, 'P003', 2, 25.00, 1),
+(3, 'P004', 10, 5.00, 1),
+(3, 'P005', 4, 12.00, 2),
+(4, 'P006', 7, 3.00, 1),
+(4, 'P007', 6, 4.00, 2),
+(5, 'P008', 1, 15.00, 1),
+(5, 'P009', 2, 20.00, 2),
+(5, 'P010', 3, 18.00, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalle_pedido_1_h`
+--
+
+CREATE TABLE `detalle_pedido_1_h` (
+  `id_detallepedido` int NOT NULL,
+  `codigo_pedido` int NOT NULL,
+  `codigo_producto` varchar(15) NOT NULL,
+  `cantidad` int NOT NULL,
+  `precio_unidad` decimal(15,2) NOT NULL,
+  `numero_linea` smallint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `detalle_pedido_1_h`
+--
+
+INSERT INTO `detalle_pedido_1_h` (`id_detallepedido`, `codigo_pedido`, `codigo_producto`, `cantidad`, `precio_unidad`, `numero_linea`) VALUES
+(1, 1, 'P001', 5, 10.00, 1),
+(2, 1, 'P002', 3, 8.00, 2),
+(3, 2, 'P003', 2, 25.00, 1),
+(4, 3, 'P004', 10, 5.00, 1),
+(5, 3, 'P005', 4, 12.00, 2),
+(6, 4, 'P006', 7, 3.00, 1),
+(7, 4, 'P007', 6, 4.00, 2),
+(8, 5, 'P008', 1, 15.00, 1),
+(9, 5, 'P009', 2, 20.00, 2),
+(10, 5, 'P010', 3, 18.00, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalle_pedido_2_h`
+--
+
+CREATE TABLE `detalle_pedido_2_h` (
+  `id_detallepedido` int NOT NULL,
+  `codigo_pedido` int NOT NULL,
+  `codigo_producto` varchar(15) NOT NULL,
+  `cantidad` int NOT NULL,
+  `precio_unidad` decimal(15,2) NOT NULL,
+  `numero_linea` smallint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `detalle_pedido_2_h`
+--
+
+INSERT INTO `detalle_pedido_2_h` (`id_detallepedido`, `codigo_pedido`, `codigo_producto`, `cantidad`, `precio_unidad`, `numero_linea`) VALUES
+(1, 1, 'P001', 5, 10.00, 1),
+(2, 1, 'P002', 3, 8.00, 2),
+(3, 2, 'P003', 2, 25.00, 1),
+(4, 3, 'P004', 10, 5.00, 1),
+(5, 3, 'P005', 4, 12.00, 2),
+(6, 4, 'P006', 7, 3.00, 1),
+(7, 4, 'P007', 6, 4.00, 2),
+(8, 5, 'P008', 1, 15.00, 1),
+(9, 5, 'P009', 2, 20.00, 2),
+(10, 5, 'P010', 3, 18.00, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pedido`
+--
+
+CREATE TABLE `pedido` (
+  `codigo_pedido` int NOT NULL,
+  `fecha` datetime NOT NULL,
+  `cliente_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `pedido`
+--
+
+INSERT INTO `pedido` (`codigo_pedido`, `fecha`, `cliente_id`) VALUES
+(1, '2024-06-01 10:00:00', 101),
+(2, '2024-06-02 11:30:00', 102),
+(3, '2024-06-03 09:15:00', 103),
+(4, '2024-06-04 14:20:00', 104),
+(5, '2024-06-04 16:45:00', 105);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `producto`
+--
+
+CREATE TABLE `producto` (
+  `codigo_producto` varchar(15) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `precio` decimal(15,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`codigo_producto`, `nombre`, `precio`) VALUES
+('P001', 'Rosa', 10.00),
+('P002', 'Tulipán', 8.00),
+('P003', 'Orquídea', 25.00),
+('P004', 'Girasol', 5.00),
+('P005', 'Lirio', 12.00),
+('P006', 'Margarita', 3.00),
+('P007', 'Clavel', 4.00),
+('P008', 'Lavanda', 15.00),
+('P009', 'Jazmín', 20.00),
+('P010', 'Hortensia', 18.00);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `detalle_pedido`
+--
+ALTER TABLE `detalle_pedido`
+  ADD PRIMARY KEY (`codigo_pedido`,`codigo_producto`),
+  ADD KEY `codigo_producto` (`codigo_producto`);
+
+--
+-- Indices de la tabla `detalle_pedido_1_h`
+--
+ALTER TABLE `detalle_pedido_1_h`
+  ADD PRIMARY KEY (`codigo_pedido`,`codigo_producto`),
+  ADD KEY `codigo_producto` (`codigo_producto`);
+
+--
+-- Indices de la tabla `detalle_pedido_2_h`
+--
+ALTER TABLE `detalle_pedido_2_h`
+  ADD PRIMARY KEY (`codigo_pedido`,`codigo_producto`),
+  ADD KEY `codigo_producto` (`codigo_producto`);
+
+--
+-- Indices de la tabla `pedido`
+--
+ALTER TABLE `pedido`
+  ADD PRIMARY KEY (`codigo_pedido`);
+
+--
+-- Indices de la tabla `producto`
+--
+ALTER TABLE `producto`
+  ADD PRIMARY KEY (`codigo_producto`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `pedido`
+--
+ALTER TABLE `pedido`
+  MODIFY `codigo_pedido` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `detalle_pedido`
+--
+ALTER TABLE `detalle_pedido`
+  ADD CONSTRAINT `detalle_pedido_ibfk_1` FOREIGN KEY (`codigo_pedido`) REFERENCES `pedido` (`codigo_pedido`),
+  ADD CONSTRAINT `detalle_pedido_ibfk_2` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo_producto`);
+
+--
+-- Filtros para la tabla `detalle_pedido_1_h`
+--
+ALTER TABLE `detalle_pedido_1_h`
+  ADD CONSTRAINT `detalle_pedido_ibfk_1_1_H` FOREIGN KEY (`codigo_pedido`) REFERENCES `pedido` (`codigo_pedido`),
+  ADD CONSTRAINT `detalle_pedido_ibfk_2_1_H` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo_producto`);
+
+--
+-- Filtros para la tabla `detalle_pedido_2_h`
+--
+ALTER TABLE `detalle_pedido_2_h`
+  ADD CONSTRAINT `detalle_pedido_ibfk_1_2_H` FOREIGN KEY (`codigo_pedido`) REFERENCES `pedido` (`codigo_pedido`),
+  ADD CONSTRAINT `detalle_pedido_ibfk_2_2_H` FOREIGN KEY (`codigo_producto`) REFERENCES `producto` (`codigo_producto`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
