@@ -1369,6 +1369,7 @@ INSERT INTO `producto` (`codigo_producto`, `nombre`, `gama`, `dimensiones`, `pro
 ('OR-249', 'Washingtonia Robusta', 'Ornamentales', '130 - 150', 'Viveros EL OASIS', '', 15, 5.00, 4.00),
 ('OR-250', 'Yucca Jewel', 'Ornamentales', '80 - 105', 'Viveros EL OASIS', '', 15, 10.00, 8.00),
 ('OR-251', 'Zamia Furfuracaea', 'Ornamentales', '90 - 110', 'Viveros EL OASIS', '', 15, 168.00, 134.00),
+('OR-252', 'Zamia Furfuracaea COPIA', 'Ornamentales', '90 - 110', 'Viveros EL OASIS', '', 15, 168.00, 134.00),
 ('OR-99', 'Mimosa DEALBATA Gaulois Astier  ', 'Ornamentales', '200-225', 'Viveros EL OASIS', 'Acacia dealbata. Nombre común o vulgar: Mimosa fina, Mimosa, Mimosa común, Mimosa plateada, Aromo francés. Familia: Mimosaceae. Origen: Australia, Sureste, (N. G. del Sur y Victoria). Arbol de follaje persistente muy usado en parques por su atractiva floración amarilla hacia fines del invierno. Altura: de 3 a 10 metros generalmente. Crecimiento rápido. Follaje perenne de tonos plateados, muy ornamental. Sus hojas son de textura fina, de color verde y sus flores amarillas que aparecen en racimos grandes. Florece de Enero a Marzo (Hemisferio Norte). Legumbre de 5-9 cm de longitud, recta o ligeramente curvada, con los bordes algo constreñidos entre las semillas, que se disponen en el fruto longitudinalmente...', 100, 14.00, 11.00);
 
 --
@@ -1503,10 +1504,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-<
-
-PRUEBA DE CAMBIOS GIT
-
-NUEVAS VARIABLES INSERTADAS
-
-DATOS NUEVOS PARA BASE SQL
